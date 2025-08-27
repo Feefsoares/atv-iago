@@ -1,217 +1,235 @@
-
-# atv-iago
-
-
-1:
-
-            #include <stdio.h>
-
-            int main() {
-                int matriz[2][2] = {
-                    {3, 4},
-                    {5, 6}
-                };
-
-                printf("Matriz 2x2 com os números 3, 4, 5, 6:\n");
-                for (int i = 0; i < 2; i++) {
-                    for (int j = 0; j < 2; j++)
-                        printf("%d ", matriz[i][j]);
-                    printf("\n");
-                }
-
-                return 0;
-            }
-
-
-2:
-
 #include <stdio.h>
 
 int main() {
-    int matriz[3][3] = {
-        {3, 4, 5},
-        {7, 8, 3},
-        {4, 5, 7}
-    };
+    int i, j;
+    int mat[2][2];
 
-    printf("Matriz 3x3:\n");
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++)
-            printf("%d ", matriz[i][j]);
-        printf("\n");
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 2; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
     }
 
-    printf("\nDiagonal principal:\n");
-    for (int i = 0; i < 3; i++)
-        printf("%d ", matriz[i][i]);
-
-    printf("\n");
-    return 0;
-}
-
-3:
-
-
-#include <stdio.h>
-
-int main() {
-    int matriz[2][3] = {
-        {4, 7, 2},
-        {1, 5, 6}
-    };
-    int soma = 0;
-
-    printf("Matriz 2x3:\n");
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 3; j++) {
-            printf("%d ", matriz[i][j]);
-            soma += matriz[i][j];
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 2; j++){        
+            printf("%d, ", mat[i][j]);
         }
         printf("\n");
     }
-
-    printf("Soma dos elementos: %d\n", soma);
+    
     return 0;
 }
-
-
-4:
-
+Questão 64
 #include <stdio.h>
 
 int main() {
-    int matriz[3][3] = {
-        {12, 7, 5},
-        {9, 18, 3},
-        {4, 6, 15}
-    };
-    int maior = matriz[0][0];
+    int i, J;
+    int mat[3][3];
 
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j < 3; j++)
-            if (matriz[i][j] > maior)
-                maior = matriz[i][j];
-
-    printf("Maior valor da matriz: %d\n", maior);
-    return 0;
-}
-
-
-5:
-
-#include <stdio.h>
-
-int main() {
-    int matriz[3][2] = {
-        {2, 5},
-        {8, 3},
-        {4, 7}
-    };
-    int pares = 0;
-
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j < 2; j++)
-            if (matriz[i][j] % 2 == 0)
-                pares++;
-
-    printf("Quantidade de números pares: %d\n", pares);
-    return 0;
-}
-
-
-6:
-
-#include <stdio.h>
-
-int main() {
-    int matriz[2][2] = {
-        {1, 2},
-        {3, 4}
-    };
-    int temp;
-
-    // Troca as linhas
-    for (int j = 0; j < 2; j++) {
-        temp = matriz[0][j];
-        matriz[0][j] = matriz[1][j];
-        matriz[1][j] = temp;
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
     }
 
-    printf("Matriz após troca de linhas:\n");
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++)
-            printf("%d ", matriz[i][j]);
+    for(i = 0; i < 3; i++){
+            printf("%d, ", mat[i][i]);
+    }
+    
+    return 0;
+}
+Questão 65
+#include <stdio.h>
+
+int main() {
+    int i, j;
+    int soma = 0;
+    int mat[2][3];
+
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 3; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 3; j++){        
+            soma += mat[i][j];
+        }
+    }
+    
+    printf("%d", soma);
+    
+    return 0;
+}
+Questão 66
+#include <stdio.h>
+
+int main() {
+    int i, j;
+    int mat[3][3];
+
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    int maior = mat[0][0];
+                  
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){        
+            if(mat[i][j] > maior){
+                maior = mat[i][j];
+            }
+        }
+    }
+    
+    printf("%d", maior);
+    
+    return 0;
+}
+Questão 67
+#include <stdio.h>
+
+int main() {
+    int i, j;
+    int mat[3][2];
+
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 2; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    int par = 0;
+                  
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 2; j++){        
+            if(mat[i][j] % 2 == 0){
+                par++;
+            }
+        }
+    }
+    
+    printf("Quantidade de números pares: %d", par);
+    
+    return 0;
+}
+Questão 68
+#include <stdio.h>
+
+int main() {
+    int i, j;
+    int mat[2][2];
+
+    int troca = 0;
+
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 2; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    for(j = 0; j < 2; j++){        
+        troca = mat[0][j];
+        mat[0][j] = mat[1][j];
+        mat[1][j] = troca;
+    }
+           
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 2; j++){        
+            printf("%d ", mat[i][j]);
+        }
         printf("\n");
     }
-
+    
     return 0;
 }
-
-7:
-
+Questão 69
 #include <stdio.h>
 
 int main() {
-    int matriz[2][3] = {
-        {10, 20, 30},
-        {40, 50, 60}
-    };
-
-    printf("Matriz 2x3 formatada:\n");
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 3; j++)
-            printf("%d\t", matriz[i][j]);
+    int i, j;
+    int mat[2][3];
+     
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 3; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
+    }
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 3; j++){
+            printf("%d ", mat[i][j]);
+        }
         printf("\n");
     }
-
+    
     return 0;
 }
-
-8:
+Questão 70
 #include <stdio.h>
 
 int main() {
-    int matriz[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-    int soma;
+    int i, j;
+    int soma = 0;
+    int somas[3] = {0,0,0};
+    int mat[3][3];
 
-    for (int i = 0; i < 3; i++) {
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){        
+            soma += mat[i][j];
+        }
+        somas[i] = soma;
         soma = 0;
-        for (int j = 0; j < 3; j++)
-            soma += matriz[i][j];
-        printf("Soma da linha %d: %d\n", i, soma);
     }
-
+    
+    printf("%d, %d, %d", somas[0], somas[1], somas[2]);
+    
     return 0;
 }
-
-9:
-
+Questão 71
 #include <stdio.h>
 
 int main() {
-    int matriz[2][3] = {
-        {1, 2, 3},
-        {4, 5, 6}
-    };
-    int transposta[3][2];
+    int i, j;
+    int mat[3][3];
+    int mat2[3][3];
+    
+    int troca = 0;
 
-    // Gera a transposta
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 3; j++)
-            transposta[j][i] = matriz[i][j];
-
-    // Exibe a transposta
-    printf("Matriz transposta (3x2):\n");
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 2; j++)
-            printf("%d\t", transposta[i][j]);
-        printf("\n");
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+            printf("Digite um número para a matriz: ");
+            scanf("%d", &mat[i][j]);
+        }
     }
 
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){        
+            mat2[i][j] = mat[j][i];
+        }
+    }           
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){        
+            printf("%d ", mat2[i][j]);
+        }
+        printf("\n");
+    }
+    
     return 0;
 }
-
